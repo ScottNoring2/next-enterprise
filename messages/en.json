@@ -1,0 +1,59 @@
+{
+  "Errors": {
+    "userNameTaken": "Username is already taken",
+    "emailUsed": "Email address is already used"
+  },
+  "FormExample": {
+     "title": "Form example",
+    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
+  },
+  "HomePage": {
+    "title": "Homepage",
+    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
+  },
+  "Contentful": {
+    "title": "Contentful example",
+    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
+  },
+  "Users": {
+    "title": "Users example",
+    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
+  },
+  "UsersSlug": {
+    "title": "Users Slug example",
+    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
+  },
+  "About": {
+    "title": "About",
+    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
+  },
+  "Index": {
+    "title": "Home",
+    "description": "<p>Only the minimum of <code>{locale}</code> messages are loaded to render this page.</p><p>These namespaces are available:</p>"
+  },
+  "Navigation": {
+    "index": "Home",
+    "about": "About",
+    "switchLocale": "Switch to {locale, select, de {German} en {English} other {Unknown}}"
+  },
+  "NotFound": {
+    "title": "Sorry, this page could not be found."
+  },
+  "PageLayout": {
+    "pageTitle": "next-intl"
+  },
+  "Header": {
+    "title": "This is a header"
+  },
+  "Footer": {
+    "title": "This is a footer"
+  },
+  "StrictTypes": {
+    "nested": {
+      "hello": "Hello",
+      "another": {
+        "level": "Level"
+      }
+    }
+  }
+}
