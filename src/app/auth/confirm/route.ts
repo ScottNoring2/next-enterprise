@@ -3,6 +3,8 @@ import { type NextRequest, NextResponse } from 'next/server'
 
 import { createClient } from 'utils/supabase/server';
 
+
+//testing
 async function updateProfile() {
   const supabase = createClient();
   const { data: { user } } = await supabase.auth.getUser();
