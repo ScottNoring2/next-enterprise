@@ -42,6 +42,7 @@
     "signin": "Sign In",
     "signup": "Sign Up",
     "signout": "Sign Out",
+    "accountupdate": "Edit Profile",
     "switchLocale": "Switch to {locale, select, de {German} en {English} other {Unknown}}"
   },
   "NotFound": {

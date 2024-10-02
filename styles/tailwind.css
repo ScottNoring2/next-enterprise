@@ -19,6 +19,9 @@
   body {
     font-family: "Inter", sans-serif;
     background-color:  'current';
+    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   }
 
   .container{
@@ -104,7 +107,7 @@
     @apply pr-2
   }
   footer{
-    @apply bg-white flex justify-between w-full sticky p-2 pl-5 mt-5 pr-5 border-t-2 border-slate-600;
+    @apply mt-auto bg-white flex justify-between w-full sticky p-2 pl-5 pr-5 border-t-2 border-slate-600;
   }
   input[type="checkbox"]:checked ~ label span svg {
     @apply inline-flex;
