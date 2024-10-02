@@ -1,6 +1,7 @@
 import { signUpAction } from "src/app/actions";
 import { FormMessage, Message } from "../../../../components/form-message";
 import { SubmitButton } from "../../../../components/submit-button";
+import { ButtonSubmit } from "components/ButtonSubmit/ButtonSubmit";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import Link from "next/link";
@@ -80,9 +81,11 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
             minLength={6}
             required
           />
-          <SubmitButton formAction={signUpAction} pendingText="Signing up...">
-            Sign up
-          </SubmitButton>
+         
+          <ButtonSubmit formAction={signUpAction} intent="primary" size="lg" pendingText="Signing up...">
+          sign up
+        </ButtonSubmit>
+          
           <FormMessage message={searchParams} />
         </div>
       </form>

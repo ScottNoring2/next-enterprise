@@ -1,28 +1,25 @@
-import { cva, type VariantProps } from "class-variance-authority"
+'use client'
 
+import { cva, type VariantProps } from "class-variance-authority"
 import { twMerge } from "tailwind-merge"
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cn } from "utils/cn";
+import { MouseEvent } from 'react';
 
 const button = cva(
-  [
-    "justify-center",
-    "inline-flex",
-    "items-center",
-    "rounded-xl",
-    "text-center",
-    "border",
-    "border-blue-400",
-    "transition-colors",
-    "delay-50",
-  ],
+  [],
   {
     variants: {
       intent: {
-        primary: ["bg-blue-400", "text-white", "hover:enabled:bg-blue-700"],
-        secondary: ["bg-transparent", "text-blue-400", "hover:enabled:bg-blue-400", "hover:enabled:text-white"],
+        primary: ["button-primary"],
+        secondary: ["button-secondary"],
+        tertiary: ["button-tertiary"]
       },
       size: {
-        sm: ["min-w-20", "h-full", "min-h-10", "text-sm", "py-1.5", "px-4"],
-        lg: ["min-w-32", "h-full", "min-h-12", "text-lg", "py-2.5", "px-6"],
+        xsm: ["xs:button-size-xsm"],
+        sm: ["button-size-sm","sm:text-red-0","xs:text-red-0"],
+        lg: ["button-size-lg"],
       },
       underline: { true: ["underline"], false: [] },
     },
@@ -33,15 +30,26 @@ const button = cva(
   }
 )
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof button> {
-  underline?: boolean
-  href: string
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof button> {
+  asChild?: boolean;
+  underline?: boolean;
+  href?: string
 }
 
-export function Button({ className, intent, size, underline, ...props }: ButtonProps) {
-  return (
-    <a className={twMerge(button({ intent, size, className, underline }))} {...props}>
-      {props.children}
-    </a>
-  )
-}
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, intent, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return (
+      <Comp
+        className={cn(button({ intent, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+Button.displayName = "Button";
+
+export { Button, button };

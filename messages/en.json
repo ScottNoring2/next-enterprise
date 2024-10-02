@@ -27,6 +27,10 @@
     "title": "About",
     "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
   },
+  "Account": {
+    "title": "Account",
+    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
+  },
   "Index": {
     "title": "Home",
     "description": "<p>Only the minimum of <code>{locale}</code> messages are loaded to render this page.</p><p>These namespaces are available:</p>"
@@ -34,6 +38,10 @@
   "Navigation": {
     "index": "Home",
     "about": "About",
+    "account": "Account",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "signout": "Sign Out",
     "switchLocale": "Switch to {locale, select, de {German} en {English} other {Unknown}}"
   },
   "NotFound": {
@@ -43,7 +51,7 @@
     "pageTitle": "next-intl"
   },
   "Header": {
-    "title": "This is a header"
+    "title": "Parlez"
   },
   "Footer": {
     "title": "This is a footer"

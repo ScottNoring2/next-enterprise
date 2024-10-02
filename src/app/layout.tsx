@@ -1,6 +1,8 @@
 import "styles/tailwind.css"
 import {NextIntlClientProvider} from 'next-intl';
 import {getLocale, getMessages} from 'next-intl/server';
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
  
 export default async function RootLayout({
   children
@@ -15,10 +17,17 @@ export default async function RootLayout({
  
   return (
     <html lang={locale}>
-      <body>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+      </head>
+      <body className="container">
         <NextIntlClientProvider messages={messages}>
+        <Header/>
           {children}
+          <Footer/>
         </NextIntlClientProvider>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
       </body>
     </html>
   );

@@ -13,10 +13,41 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+    },
     extend: {
       colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        black: colors.black,
+        blue: colors.blue,
+        cyan: colors.cyan,
+        emerald: colors.emerald,
+        fuchsia: colors.fuchsia,
+        slate: colors.slate,
+        gray: colors.gray,
+        neutral: colors.neutral,
+        stone: colors.stone,
+        green: colors.green,
+        indigo: colors.indigo,
+        lime: colors.lime,
+        orange: colors.orange,
+        pink: colors.pink,
+        purple: colors.purple,
+        red: colors.red,
+        rose: colors.rose,
+        sky: colors.sky,
+        teal: colors.teal,
+        violet: colors.violet,
+        yellow: colors.rose,
+        white: colors.white,
         primary: {
           50: "#eff6ff",
           100: "#dbeafe",
@@ -31,6 +62,7 @@ module.exports = {
         },
       },
       fontFamily: {
+        display: ['Gilroy', 'sans-serif'],
         body: [
           "Inter",
           "ui-sans-serif",
@@ -81,9 +113,27 @@ module.exports = {
       minWidth: {
         ...defaultTheme.width,
       },
+      spacing: {
+        'extra-tight': '4px',
+      },
+      screens: {
+        xs: '320px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        xxl: '1536px'
+      },
+      extend: { 
+        
+        
+      },
     },
   },
-  plugins: [],
+  plugins: [ 
+    require('@fullhuman/postcss-purgecss'),
+    require('flowbite/plugin')
+  ],
   future: {
     hoverOnlyWhenSupported: true,
   },

@@ -1,8 +1,10 @@
+
 import { signOutAction } from "src/app/actions";
 import { hasEnvVars } from "utils/supabase/check-env-vars";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+import { Button } from "./Button/Button";
+import { ButtonSubmit } from "./ButtonSubmit/ButtonSubmit";
 import { createClient } from "utils/supabase/server";
 
 
@@ -23,48 +25,23 @@ export default async function AuthButton() {
               Please update .env.local file with anon key and url
             </Badge>
           </div>
-          <div className="flex gap-2">
-            <Button
-              asChild
-              size="sm"
-              variant={"outline"}
-              disabled
-              className="cursor-none pointer-events-none bg-slate-700 text-white hover:bg-white  hover:text-black"
-
-            >
-              <Link href="/sign-in">Sign in</Link>
-            </Button>
-            <Button
-              asChild
-              size="sm"
-              variant={"default"}
-              disabled
-              className="opacity-75 cursor-none pointer-events-none bg-slate-700 text-white hover:bg-white  hover:text-black"
-            >
-              <Link href="/sign-up">Sign up</Link>
-            </Button>
-          </div>
         </div>
       </>
     );
   }
   return user ? (
-    <div className="flex items-center gap-4 ">
-      Hey, {user.email}!
-      <form action={signOutAction}>
-        <Button type="submit" variant={"outline"} className="bg-slate-700 text-white hover:bg-white  hover:text-black">
-          Sign out
-        </Button>
-      </form>
-    </div>
+   <></>
   ) : (
-    <div className="flex gap-2">
-      <Button asChild size="sm" variant={"outline"} className="bg-slate-700 text-white hover:bg-white  hover:text-black">
-        <Link href="/sign-in">Sign in</Link>
-      </Button>
-      <Button asChild size="sm" variant={"default"} className="bg-slate-700 text-white hover:bg-white  hover:text-black">
-        <Link href="/sign-up">Sign up</Link>
-      </Button>
-    </div>
+    /*<div className="flex justify-end hidden md:block">
+        <Button intent="secondary" size="sm">
+          <Link href="/sign-in">sign in</Link>
+        </Button>
+        <Button intent="secondary"  size="sm">
+          <Link href="/sign-up">sign up</Link>
+        </Button>
+    </div>*/
+    <></>
+      
+    
   );
 }
