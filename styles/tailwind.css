@@ -30,6 +30,10 @@
     padding: 0 !important;
   }
 
+  .content{
+    @apply mt-0 mb-8;
+  }
+
   
   @media screen(xs) {
     .container{
@@ -93,7 +97,12 @@
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
   box-shadow: 0 0 0px 1000px #fff inset;
   background-color: #fff;
+  @apply border border-slate-400;
 }
+
+  a{
+    @apply font-medium hover:!underline;
+  }
   
 }
 
@@ -125,14 +134,43 @@
   input#checkboxLabel:checked ~ .box span {
     @apply opacity-100;
   }
+}
+@layer utilities {
+  /* Forms */
+  .form-container{
+    @apply flex flex-col min-w-64 max-w-64 md:max-w-96 mx-auto;
+  }
+  .form-container .form-inner-container{
+    @apply flex flex-col gap-2 [&>input]:mb-3 mt-8;
+  }
+
+  .form-container h1{
+    @apply text-2xl font-medium capitalize
+  }
+
+  .form-container p{
+    @apply text-sm 
+  }
+  
+  .form-container .form-field{
+    @apply relative my-2;
+  }
+  .form-container input{
+    @apply block appearance-none;
+  }
+
+.form-container label{
+    @apply absolute capitalize duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 ;
+  }
+
+
 
   /* Button */
   button{
     @apply capitalize justify-center inline-flex items-center rounded-xl text-center text-black border border-black transition-colors hover:bg-black hover:text-white;
   }
   .button-primary{
-    @apply capitalize justify-center inline-flex items-center rounded-xl text-center text-black border border-black transition-colors hover:bg-black hover:text-white;
-    @apply m-0 ;
+    @apply capitalize !bg-slate-300 hover:!bg-slate-500 my-4;
   }
   .button-secondary{
     @apply flex flex-row items-center mr-4;

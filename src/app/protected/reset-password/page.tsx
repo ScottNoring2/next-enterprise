@@ -1,38 +1,43 @@
-import { resetPasswordAction } from "@/app/actions";
-import { FormMessage, Message } from "@/components/form-message";
-import { SubmitButton } from "@/components/submit-button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
-export default async function ResetPassword({
+import { resetPasswordAction } from "src/app/actions";
+import { FormMessage, Message } from "../../../../components/form-message";
+import { ButtonSubmit } from "components/ButtonSubmit/ButtonSubmit";
+import { Input } from "../../../../components/ui/input";
+import { Label } from "../../../../components/ui/label";
+import {useTranslations} from 'next-intl';
+
+export default  function ResetPassword({
   searchParams,
 }: {
   searchParams: Message;
 }) {
+  const t = useTranslations('Forms');
+
   return (
-    <form className="flex flex-col w-full max-w-md p-4 gap-2 [&>input]:mb-4">
-      <h1 className="text-2xl font-medium">Reset password</h1>
-      <p className="text-sm text-foreground/60">
-        Please enter your new password below.
+    <form className="form-container">
+      <h1>{t('resetpassword')}</h1>
+      <p>
+        {t("resetpasswordintro")}
       </p>
-      <Label htmlFor="password">New password</Label>
-      <Input
-        type="password"
-        name="password"
-        placeholder="New password"
-        required
-      />
-      <Label htmlFor="confirmPassword">Confirm password</Label>
-      <Input
-        type="password"
-        name="confirmPassword"
-        placeholder="Confirm password"
-        required
-      />
-      <SubmitButton formAction={resetPasswordAction}>
-        Reset password
-      </SubmitButton>
+
+      <div className="form-inner-container">
+        <div className="form-field">
+          <Input name="password"   type="password" className="peer"  required /> 
+          <Label htmlFor="password" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('newpassword')}</Label>
+        </div>
+
+        <div className="form-field">
+          <Input name="confirmPassword"   type="password" className="peer" required /> 
+          <Label htmlFor="confirmPassword" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('confirmpassword')}</Label>
+        </div>
+    
+      
+      <ButtonSubmit formAction={resetPasswordAction}>
+        {t('resetpassword')}
+      </ButtonSubmit>
       <FormMessage message={searchParams} />
+      </div>
     </form>
   );
 }
+ResetPassword.messages = ['Forms'];

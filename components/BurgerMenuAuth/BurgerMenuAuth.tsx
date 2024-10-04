@@ -6,6 +6,7 @@ import { ButtonSubmit } from "components/ButtonSubmit/ButtonSubmit";
 import { signOutAction } from "src/app/actions";
 import { initFlowbite } from 'flowbite'
 
+
 export default function BurgerMenuAuth() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   const t = useTranslations('Navigation');

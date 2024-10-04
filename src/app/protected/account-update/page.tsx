@@ -6,6 +6,12 @@ import Avatar from '../../account/avatar'
 import getUser from '../../auth/getUser'
 import getUserId from '../../auth/getUser'
 import getUserEmail from '../../auth/getUser';
+import { ButtonSubmit } from 'components/ButtonSubmit/ButtonSubmit'
+import { Button } from 'components/Button/Button'
+import { Input } from "../../../../components/ui/input";
+import { Label } from "../../../../components/ui/label";
+import Link from "next/link";
+import {useTranslations} from 'next-intl';
 
 export default function AccountForm() {
   const supabase = createClient()
@@ -18,6 +24,7 @@ export default function AccountForm() {
   const [website, setWebsite] = useState<string | null>(null)
   const [avatar_url, setAvatarUrl] = useState<string | null>(null)
 
+  const t = useTranslations('Forms');
 
   const getProfile = useCallback(async () => {
     const { data: { user } } = await supabase.auth.getUser()
@@ -109,80 +116,57 @@ console.log("fisrt_name: " + firstname);
   }
 
   return (
-    <div className="form-widget">
+   
+    <form className="form-container">
+        <h1>{t('accountupdate')}</h1>
     
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          value={email || ''}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="fullName">Full Name</label>
-        <input
-          id="fullName"
-          type="text"
-          value={fullname || ''}
-          onChange={(e) => setFullname(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="firstName">First Name</label>
-        <input
-          id="firstName"
-          type="text"
-          value={firstname || ''}
-          onChange={(e) => setFirstname(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          id="lastName"
-          type="text"
-          value={lastname || ''}
-          onChange={(e) => setLastname(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          id="username"
-          type="text"
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="url"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-      </div>
+        <div className="form-inner-container">
+        <div className="form-field">
+          <Input name="email" placeholder="" value={email || ''}  className="peer" required onChange={(e) => setEmail(e.target.value)}/>  
+          <Label htmlFor="email" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('email')}</Label>
+        </div>
+        <div className="form-field">
+          <Input name="text" id="fullname" value={fullname || ''} placeholder="" className="peer" required onChange={(e) => setFullname(e.target.value)}/>  
+          <Label htmlFor="fullname" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('fullname')}</Label>
+        </div>
+        <div className="form-field">
+          <Input name="text" id="firstName" value={firstname || ''} placeholder="" className="peer" required onChange={(e) => setFirstname(e.target.value)}/>  
+          <Label htmlFor="firstName" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('firstname')}</Label>
+        </div>
+        <div className="form-field">
+          <Input name="text" id="lastName" value={lastname || ''} placeholder="" className="peer" required onChange={(e) => setLastname(e.target.value)}/>  
+          <Label htmlFor="lastName" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('lastname')}</Label>
+        </div>
+       {/* <div className="form-field">
+          <Input name="text" id="username" value={username || ''}placeholder="" className="peer" required onChange={(e) => setUsername(e.target.value)}/>  
+          <Label htmlFor="username" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('username')}</Label>
+        </div>*/}
+        <div className="form-field">
+          <Input name="text" id="website" value={website || ''}placeholder="" className="peer" required onChange={(e) => setWebsite(e.target.value)}/>  
+          <Label htmlFor="website" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('website')}</Label>
+        </div>
+      
+      
+      
+     
 
-      <div>
-        <button
+       {/*} <button
           className="button primary block"
           onClick={() => updateProfile({username, website, avatar_url,fullname, firstname, lastname, email })}
           disabled={loading}
         >
-          {loading ? 'Loading ...' : 'Update'}
-        </button>
+          {loading ? 'Loading ...' : 'Update Profile'}
+        </button>*/}
+        <Button intent="primary" size="lg" 
+          onClick={() => updateProfile({username, website, avatar_url,fullname, firstname, lastname, email })}
+          disabled={loading}>
+           {loading ? 'Loading ...' : 'Update Profile'}
+        </Button>
       </div>
-
-      <div>
-        <form action="/auth/signout" method="post">
-          <button className="button block" type="submit">
-            Sign out
-          </button>
-        </form>
-      </div>
-    </div>
+    
+      
+    </form>
   )
 }
+
+AccountForm.messages = ['Forms'];

@@ -45,6 +45,24 @@
     "accountupdate": "Edit Profile",
     "switchLocale": "Switch to {locale, select, de {German} en {English} other {Unknown}}"
   },
+  "Forms": {
+    "email": "email address",
+    "password": "password",
+    "signin": "sign in",
+    "signup": "sign up",
+    "accountupdate": "edit profile",
+    "forgotpassword": "Forgot password?",
+    "fullname": "full name",
+    "firstname": "first name",
+    "lastname": "last name",
+    "username": "username",
+    "website": "website",
+    "resetpassword": "reset password",
+    "resetpasswordintro": "Please enter your new password below.",
+    "newpassword": "new password",
+    "confirmpassword": "confirm password",
+    "haveaccount": " Already have an account?"
+  },
   "NotFound": {
     "title": "Sorry, this page could not be found."
   },

@@ -26,7 +26,9 @@ export default async function RootLayout({
       <body className="container">
         <NextIntlClientProvider messages={messages}>
         <Header/>
-          {children}
+         <section className="content">
+            {children}
+          </section>
           <Footer/>
         </NextIntlClientProvider>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>

@@ -6,7 +6,8 @@ import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import Link from "next/link";
 import { SmtpMessage } from "../smtp-message";
-import { createClient } from '../../../../utils/supabase/client'
+import { createClient } from '../../../../utils/supabase/client';
+import {useTranslations} from 'next-intl';
 
 async function updateProfile({
   username,
@@ -52,6 +53,8 @@ async function updateProfile({
 }
 
 export default function Signup({ searchParams }: { searchParams: Message }) {
+  const t = useTranslations('Forms');
+
   if ("message" in searchParams) {
     return (
       <div className="w-full flex-1 flex items-center h-screen sm:max-w-md justify-center gap-2 p-4">
@@ -62,28 +65,38 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
 
   return (
     <>
-      <form className="flex flex-col min-w-64 max-w-64 mx-auto">
-        <h1 className="text-2xl font-medium">Sign up</h1>
-        <p className="text-sm text text-foreground">
+      <form className="form-container">
+        <h1> {t('signup')}</h1>
+        <p>
           Already have an account?{" "}
-          <Link className="text-primary font-medium underline" href="/sign-in">
-            Sign in
+          <Link href="/sign-in" className="">
+            {t('signin')}
           </Link>
         </p>
-        <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
-          <Label htmlFor="email">Email</Label>
-          <Input name="email" placeholder="you@example.com" required />
-          <Label htmlFor="password">Password</Label>
+    
+        <div className="form-inner-container">
+       {/*</div> <div className="form-field">
+    <input type="text" id="floating_outlined" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+    <label for="floating_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Floating outlined</label>
+</div>*/}
+       <div className="form-field">
+          <Input name="email" placeholder="" className="peer" required />  
+          <Label htmlFor="email" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('email')}</Label>
+        </div>
+        <div className="form-field">
           <Input
             type="password"
             name="password"
             placeholder="Your password"
             minLength={6}
+            className="peer"
             required
           />
+          <Label htmlFor="password" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('password')}</Label>
+        </div>
          
-          <ButtonSubmit formAction={signUpAction} intent="primary" size="lg" pendingText="Signing up...">
-          sign up
+        <ButtonSubmit formAction={signUpAction} intent="primary" size="lg" pendingText="Signing up...">
+        {t('signup')}
         </ButtonSubmit>
           
           <FormMessage message={searchParams} />
@@ -93,3 +106,5 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
     </>
   );
 }
+
+Signup.messages = ['Forms'];
