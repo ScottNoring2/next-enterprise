@@ -32,12 +32,12 @@ const button = cva(
 )
 
 
-export interface ButtonSubmitProps extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof button> {
+export interface PzButtonSubmitProps extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof button> {
   pendingText?: string;
   formAction?: any;
 }
 
-export function ButtonSubmit({ className, intent, size, underline, pendingText = "Submitting...", ...props }: ButtonSubmitProps) {
+export function PzButtonSubmit({ className, intent, size, underline, pendingText = "Submitting...", ...props }: PzButtonSubmitProps) {
   const { pending } = useFormStatus();
   return (
     <button type="submit" aria-disabled={pending} className={twMerge(button({ intent, size, className, underline }))} {...props}>

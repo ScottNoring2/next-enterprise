@@ -6,8 +6,8 @@ import Avatar from '../../account/avatar'
 import getUser from '../../auth/getUser'
 import getUserId from '../../auth/getUser'
 import getUserEmail from '../../auth/getUser';
-import { ButtonSubmit } from 'components/ButtonSubmit/ButtonSubmit'
-import { Button } from 'components/Button/Button'
+import { PzButtonSubmit } from 'components/PzButtonSubmit/PzButtonSubmit'
+import { PzButton } from 'components/PzButton/PzButton'
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import Link from "next/link";
@@ -157,11 +157,11 @@ console.log("fisrt_name: " + firstname);
         >
           {loading ? 'Loading ...' : 'Update Profile'}
         </button>*/}
-        <Button intent="primary" size="lg" 
+        <PzButton intent="primary" size="lg" 
           onClick={() => updateProfile({username, website, avatar_url,fullname, firstname, lastname, email })}
           disabled={loading}>
            {loading ? 'Loading ...' : 'Update Profile'}
-        </Button>
+        </PzButton>
       </div>
     
       

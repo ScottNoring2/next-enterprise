@@ -1,6 +1,6 @@
 
 import {useTranslations} from 'next-intl';
-import Navigation from 'components/Navigation/Navigation';
+import PzNavigation from 'components/PzNavigation/PzNavigation';
 import HeaderAuth from 'components/header-auth';
 import { hasEnvVars } from 'utils/supabase/check-env-vars';
 import { EnvVarWarning } from 'components/env-var-warning';
@@ -55,13 +55,13 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLElement>, VariantP
     //href: string
   }
   
-export default  function Header({ className, intent, ...props }: HeaderProps) {
+export default  function PzHeader({ className, intent, ...props }: HeaderProps) {
     const t = useTranslations('Header');
    
    return (
       <header>
           <h1 className="row-span-12 flex-grow md:flex-grow-0 flex items-center text-2xl bg-black text-white px-8 font-bold">{t('title')}</h1>
-          <Navigation/>
+          <PzNavigation/>
          {/* <div className={twMerge(secondaryContent({ intent, className}))} {...props}>
             {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
           </div> */}
@@ -69,7 +69,7 @@ export default  function Header({ className, intent, ...props }: HeaderProps) {
    )
  }
 
-Header.messages = ['Header'];
+PzHeader.messages = ['Header'];
 
 
 

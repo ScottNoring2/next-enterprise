@@ -1,6 +1,6 @@
 import { signInAction } from "../../actions";
 import { FormMessage, Message } from "../../../../components/form-message";
-import { ButtonSubmit } from "components/ButtonSubmit/ButtonSubmit";
+import { PzButtonSubmit } from "components/PzButtonSubmit/PzButtonSubmit";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import Link from "next/link";
@@ -39,9 +39,9 @@ export default function Login({ searchParams }: { searchParams: Message }) {
           </Link>
         </div>
          
-        <ButtonSubmit formAction={signInAction} intent="primary" size="lg" pendingText="Signing in...">
+        <PzButtonSubmit formAction={signInAction} intent="primary" size="lg" pendingText="Signing in...">
           {t('signin')}
-        </ButtonSubmit>
+        </PzButtonSubmit>
 
         
         <FormMessage message={searchParams} />

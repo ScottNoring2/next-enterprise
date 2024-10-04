@@ -1,7 +1,6 @@
 import { signUpAction } from "src/app/actions";
 import { FormMessage, Message } from "../../../../components/form-message";
-import { SubmitButton } from "../../../../components/submit-button";
-import { ButtonSubmit } from "components/ButtonSubmit/ButtonSubmit";
+import { PzButtonSubmit } from "components/PzButtonSubmit/PzButtonSubmit";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import Link from "next/link";
@@ -95,9 +94,9 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
           <Label htmlFor="password" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('password')}</Label>
         </div>
          
-        <ButtonSubmit formAction={signUpAction} intent="primary" size="lg" pendingText="Signing up...">
+        <PzButtonSubmit formAction={signUpAction} intent="primary" size="lg" pendingText="Signing up...">
         {t('signup')}
-        </ButtonSubmit>
+        </PzButtonSubmit>
           
           <FormMessage message={searchParams} />
         </div>

@@ -1,8 +1,8 @@
 import { Metadata } from "next"
-import { Button } from "components/Button/Button"
+import { PzButton } from "components/PzButton/PzButton"
 import { LP_GRID_ITEMS } from "lp-items"
-import  Header from "components/Header/Header"
-import Footer from "components/Footer/Footer"
+import  PzHeader from "components/PzHeader/PzHeader"
+import PzFooter from "components/PzFooter/PzFooter"
 import {useTranslations} from 'next-intl';
 
 

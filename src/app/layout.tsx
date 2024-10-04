@@ -1,8 +1,8 @@
 import "styles/tailwind.css"
 import {NextIntlClientProvider} from 'next-intl';
 import {getLocale, getMessages} from 'next-intl/server';
-import Header from "components/Header/Header";
-import Footer from "components/Footer/Footer";
+import PzHeader from "components/PzHeader/PzHeader";
+import PzFooter from "components/PzFooter/PzFooter";
 
  
 export default async function RootLayout({
@@ -25,11 +25,11 @@ export default async function RootLayout({
       </head>
       <body className="container">
         <NextIntlClientProvider messages={messages}>
-        <Header/>
+        <PzHeader/>
          <section className="content">
             {children}
           </section>
-          <Footer/>
+          <PzFooter/>
         </NextIntlClientProvider>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
       </body>

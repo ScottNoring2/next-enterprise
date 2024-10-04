@@ -1,7 +1,7 @@
 
 import { resetPasswordAction } from "src/app/actions";
 import { FormMessage, Message } from "../../../../components/form-message";
-import { ButtonSubmit } from "components/ButtonSubmit/ButtonSubmit";
+import { PzButtonSubmit } from "components/PzButtonSubmit/PzButtonSubmit";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import {useTranslations} from 'next-intl';
@@ -32,9 +32,9 @@ export default  function ResetPassword({
         </div>
     
       
-      <ButtonSubmit formAction={resetPasswordAction}>
+      <PzButtonSubmit formAction={resetPasswordAction}>
         {t('resetpassword')}
-      </ButtonSubmit>
+      </PzButtonSubmit>
       <FormMessage message={searchParams} />
       </div>
     </form>

@@ -38,7 +38,7 @@ export interface ButtonProps
   href?: string
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const PzButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, intent, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
@@ -50,6 +50,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   },
 );
-Button.displayName = "Button";
+PzButton.displayName = "Button";
 
-export { Button, button };
+export { PzButton, button };

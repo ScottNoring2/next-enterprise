@@ -6,7 +6,7 @@ import { HtmlHTMLAttributes } from 'react';
 type Props = {
     title: string;
   };
-export default function Footer() {
+export default function PzFooter() {
     const t = useTranslations('Footer');
    return (
       <footer>
@@ -16,5 +16,5 @@ export default function Footer() {
    )
  }
 
-Footer.messages = ['Footer'];
+PzFooter.messages = ['Footer'];
  

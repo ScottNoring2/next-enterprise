@@ -2,6 +2,7 @@
 const { pick, omit } = require("lodash")
 const colors = require("tailwindcss/colors")
 const defaultTheme = require("tailwindcss/defaultTheme")
+const flowbite = require("flowbite-react/tailwind");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,7 +16,8 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx}",
     "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite/**/*.js"
+    //"./node_modules/flowbite/**/*.js",
+    flowbite.content(),
   ],
   theme: {
     container: {
@@ -132,7 +134,8 @@ module.exports = {
   },
   plugins: [ 
     require('@fullhuman/postcss-purgecss'),
-    require('flowbite/plugin')
+    //require('flowbite/plugin'),
+    flowbite.plugin()
   ],
   future: {
     hoverOnlyWhenSupported: true,

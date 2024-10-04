@@ -1,8 +1,7 @@
 import { forgotPasswordAction } from "src/app/actions";
 import { FormMessage, Message } from "components/form-message";
-import { SubmitButton } from "components/submit-button";
 import { SmtpMessage } from "../smtp-message";
-import { ButtonSubmit } from "components/ButtonSubmit/ButtonSubmit";
+import { PzButtonSubmit } from "components/PzButtonSubmit/PzButtonSubmit";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import Link from "next/link";
@@ -29,9 +28,9 @@ export default function ForgotPassword({
           <Input name="email" placeholder="" className="peer" required />  
           <Label htmlFor="email" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('email')}</Label>
         </div>
-          <ButtonSubmit formAction={forgotPasswordAction} intent="primary" size="lg" pendingText="Signing in...">
+          <PzButtonSubmit formAction={forgotPasswordAction} intent="primary" size="lg" pendingText="Signing in...">
             {t('resetpassword')}
-          </ButtonSubmit>
+          </PzButtonSubmit>
 
           <FormMessage message={searchParams} />
         </div>
