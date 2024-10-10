@@ -10,14 +10,14 @@ export default async function PzNavigation() {
   } = await createClient().auth.getUser();
  
    return (
-    <>
+    <div className="relative ">
         {user &&
             <PzFlowbiteReactNavbarAuth/>
           }
          {!user &&
             <PzFlowbiteReactNavbar/>
           }
-    </>
+    </div>
    )
  }
 

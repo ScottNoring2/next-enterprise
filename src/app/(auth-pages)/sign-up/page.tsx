@@ -1,12 +1,12 @@
 import { signUpAction } from "src/app/actions";
 import { FormMessage, Message } from "../../../../components/form-message";
 import { PzButtonSubmit } from "components/PzButtonSubmit/PzButtonSubmit";
-import { Input } from "../../../../components/ui/input";
-import { Label } from "../../../../components/ui/label";
 import Link from "next/link";
 import { SmtpMessage } from "../smtp-message";
 import { createClient } from '../../../../utils/supabase/client';
 import {useTranslations} from 'next-intl';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
 
 async function updateProfile({
   username,
@@ -78,21 +78,24 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
     <input type="text" id="floating_outlined" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
     <label for="floating_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Floating outlined</label>
 </div>*/}
-       <div className="form-field">
-          <Input name="email" placeholder="" className="peer" required />  
-          <Label htmlFor="email" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('email')}</Label>
-        </div>
-        <div className="form-field">
-          <Input
-            type="password"
-            name="password"
-            placeholder="Your password"
-            minLength={6}
-            className="peer"
-            required
-          />
-          <Label htmlFor="password" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('password')}</Label>
-        </div>
+          <div className="form-field">
+            <FloatingLabel
+              controlId="email"
+              label= {t('email')}
+              className="mb-3"
+            >
+              <Form.Control type="email" name="email" placeholder="name@example.com" />
+            </FloatingLabel>
+      </div>
+      <div className="form-field">
+        <FloatingLabel
+          controlId="password"
+          label= {t('password')}
+          className="mb-3"
+        >
+          <Form.Control type="password" name="password" placeholder="" />
+        </FloatingLabel>
+      </div>
          
         <PzButtonSubmit formAction={signUpAction} intent="primary" size="lg" pendingText="Signing up...">
         {t('signup')}

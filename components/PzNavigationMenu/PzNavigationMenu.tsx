@@ -14,34 +14,11 @@ export function PzFlowbiteReactNavbar() {
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
       </Navbar.Brand>*/}
       <Navbar.Toggle />
-      <Navbar.Collapse>
-        <Navbar.Link href="#" active>
-          Home
-        </Navbar.Link>
-         <Navbar.Link href="/">{t('index')}</Navbar.Link>
-        <Navbar.Link href="#">{t('about')}</Navbar.Link>
-        <Navbar.Link href="#">
-        <Dropdown
-          className="nav-dropdown"
-          arrowIcon={true}
-          inline
-          label={t('account')}
-         >
-          {/*<Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
-            <span className="block truncate text-sm font-medium">name@flowbite.com</span>
-          </Dropdown.Header>*/}
-          <Dropdown.Item>
-            <Link href="/sign-in">{t('signin')}</Link>
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <Link href="/sign-up">{t('signup')}</Link>
-          </Dropdown.Item>
-         {/*<Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>*/}
-        </Dropdown>
-        <Navbar.Toggle />
-      </Navbar.Link>
+      <Navbar.Collapse className="nav-dropdown-container">
+        <Navbar.Link href="/">{t('index')}</Navbar.Link>
+        <Navbar.Link href="/about">{t('about')}</Navbar.Link>
+        <Navbar.Link href="/sign-in">{t('signin')}</Navbar.Link>
+        <Navbar.Link href="/sign-up">{t('signup')}</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

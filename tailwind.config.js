@@ -113,7 +113,17 @@ module.exports = {
         ...defaultTheme.height,
       },
       minWidth: {
-        ...defaultTheme.width,
+       // ...defaultTheme.width,
+        'sm': '20rem',
+        'md': '47rem',
+        'lg': '64rem',
+        'form': '100%'
+      },
+      maxWidth: {
+        'sm': '47rem',
+        'md': '64rem',
+        'lg': '64rem',
+        'form': '50%'
       },
       spacing: {
         'extra-tight': '4px',

@@ -5,6 +5,8 @@ import { PzButtonSubmit } from "components/PzButtonSubmit/PzButtonSubmit";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import {useTranslations} from 'next-intl';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
 
 export default  function ResetPassword({
   searchParams,
@@ -22,13 +24,24 @@ export default  function ResetPassword({
 
       <div className="form-inner-container">
         <div className="form-field">
-          <Input name="password"   type="password" className="peer"  required /> 
-          <Label htmlFor="password" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('newpassword')}</Label>
+        <FloatingLabel
+          controlId="password"
+          label= {t('password')}
+          className="mb-3"
+        >
+          <Form.Control type="password" name="password" placeholder="" required/>
+        </FloatingLabel>
         </div>
 
         <div className="form-field">
-          <Input name="confirmPassword"   type="password" className="peer" required /> 
-          <Label htmlFor="confirmPassword" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('confirmpassword')}</Label>
+          <FloatingLabel
+            controlId="confirmPassword"
+            label= {t('confirmpassword')}
+            className="mb-3"
+          >
+            <Form.Control type="password" name="confirmPassword" placeholder="" required/>
+          </FloatingLabel>
+          
         </div>
     
       

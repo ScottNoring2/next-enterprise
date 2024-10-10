@@ -1,8 +1,4 @@
 import { Metadata } from "next"
-import { PzButton } from "components/PzButton/PzButton"
-import { LP_GRID_ITEMS } from "lp-items"
-import  PzHeader from "components/PzHeader/PzHeader"
-import PzFooter from "components/PzFooter/PzFooter"
 import {useTranslations} from 'next-intl';
 
 
@@ -23,12 +19,24 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Web() {
+export default function Homepage() {
   const t = useTranslations('HomePage');
   return (
-    <>
+    <section>
+          <div className="relative bg-gradient-to-r from-purple-600 to-blue-600 h-56 md:h-96 text-white overflow-hidden">
+  <div className="absolute inset-0">
+    <img src="./images/StockCake-Networking-business-event_1728314513.jpg" alt="Background Image" className="object-cover object-center w-full h-full" />
+    <div className="absolute inset-0 bg-blue-900 opacity-60"></div>
+  </div>
+  
+  <div className="relative z-10 flex flex-col justify-center items-center h-full text-center">
+    <h1 className="text-5xl font-bold leading-tight mb-4">Welcome to Parlez</h1>
+    <p className="text-lg text-gray-300 mb-8">Your social source for business networking</p>
+    <a href="#" className="bg-blue-700 text-white-900 hover:bg-white hover:text-blue-700 py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:!no-underline">Get Started</a>
+  </div>
+</div>
       {/*
-     <section className="bg-white dark:bg-gray-900">
+     <section classNameName="bg-white dark:bg-gray-900">
        <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <div className="mx-auto place-self-center">
             <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
@@ -67,6 +75,6 @@ export default function Web() {
         </div>
       </section>*/}
   
-    </>
+    </section>
   )
 }

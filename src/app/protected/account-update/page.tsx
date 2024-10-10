@@ -12,6 +12,8 @@ import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import Link from "next/link";
 import {useTranslations} from 'next-intl';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
 
 export default function AccountForm() {
   const supabase = createClient()
@@ -118,32 +120,60 @@ console.log("fisrt_name: " + firstname);
   return (
    
     <form className="form-container">
-        <h1>{t('accountupdate')}</h1>
+      <h1>{t('accountupdate')}</h1>
     
-        <div className="form-inner-container">
+      <div className="form-inner-container">
+          
         <div className="form-field">
-          <Input name="email" placeholder="" value={email || ''}  className="peer" required onChange={(e) => setEmail(e.target.value)}/>  
-          <Label htmlFor="email" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('email')}</Label>
+        <FloatingLabel
+          controlId="email"
+          label= {t('email')}
+          className="mb-3"
+        >
+          <Form.Control type="email" name="email" placeholder="name@example.com" value={email || ''} required onChange={(e) => setEmail(e.target.value)}/>
+        </FloatingLabel>
         </div>
         <div className="form-field">
-          <Input name="text" id="fullname" value={fullname || ''} placeholder="" className="peer" required onChange={(e) => setFullname(e.target.value)}/>  
-          <Label htmlFor="fullname" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('fullname')}</Label>
+        <FloatingLabel
+          controlId="fullname"
+          label= {t('fullname')}
+          className="mb-3"
+        >
+          <Form.Control type="text" name="fullname" placeholder="John Smith" value={fullname || ''} required onChange={(e) => setFullname(e.target.value)}/>
+        </FloatingLabel>
+          
         </div>
         <div className="form-field">
-          <Input name="text" id="firstName" value={firstname || ''} placeholder="" className="peer" required onChange={(e) => setFirstname(e.target.value)}/>  
-          <Label htmlFor="firstName" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('firstname')}</Label>
+          <FloatingLabel
+            controlId="firstName"
+            label= {t('firstname')}
+            className="mb-3"
+          >
+            <Form.Control type="text" name="firstName" placeholder="John" value={firstname || ''} required onChange={(e) => setFirstname(e.target.value)}/>
+          </FloatingLabel>
         </div>
         <div className="form-field">
-          <Input name="text" id="lastName" value={lastname || ''} placeholder="" className="peer" required onChange={(e) => setLastname(e.target.value)}/>  
-          <Label htmlFor="lastName" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('lastname')}</Label>
+          <FloatingLabel
+              controlId="lastName"
+              label= {t('lastname')}
+              className="mb-3"
+            >
+              <Form.Control type="text" name="lastName" placeholder="Smith" value={lastname || ''} required onChange={(e) => setLastname(e.target.value)}/>
+            </FloatingLabel>
         </div>
        {/* <div className="form-field">
           <Input name="text" id="username" value={username || ''}placeholder="" className="peer" required onChange={(e) => setUsername(e.target.value)}/>  
           <Label htmlFor="username" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('username')}</Label>
         </div>*/}
         <div className="form-field">
-          <Input name="text" id="website" value={website || ''}placeholder="" className="peer" required onChange={(e) => setWebsite(e.target.value)}/>  
-          <Label htmlFor="website" className="peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">{t('website')}</Label>
+        <FloatingLabel
+              controlId="website"
+              label= {t('website')}
+              className="mb-3"
+            >
+              <Form.Control type="text" name="website" placeholder="www.yourbizsite.com" value={website || ''} required onChange={(e) => setWebsite(e.target.value)}/>
+            </FloatingLabel>
+       
         </div>
       
       
