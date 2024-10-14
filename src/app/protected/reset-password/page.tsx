@@ -45,7 +45,7 @@ export default  function ResetPassword({
         </div>
     
       
-      <PzButtonSubmit formAction={resetPasswordAction}>
+      <PzButtonSubmit formAction={resetPasswordAction} intent="primary" size="lg" className="w-full md:w-1/2" >
         {t('resetpassword')}
       </PzButtonSubmit>
       <FormMessage message={searchParams} />

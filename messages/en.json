@@ -9,7 +9,9 @@
   },
   "HomePage": {
     "title": "Homepage",
-    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short})."
+    "lastUpdated": "This example was updated {lastUpdatedRelative} ({lastUpdated, date, short}).",
+    "heroTitle": "Welcome to Parlez",
+    "heroTagline": "Your social source for business networking"
   },
   "Contentful": {
     "title": "Contentful example",

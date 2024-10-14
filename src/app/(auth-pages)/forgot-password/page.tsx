@@ -33,7 +33,7 @@ export default function ForgotPassword({
           <Form.Control type="email" name="email" placeholder="name@example.com" />
         </FloatingLabel>
         </div>
-          <PzButtonSubmit formAction={forgotPasswordAction} intent="primary" size="lg" pendingText="Signing in...">
+          <PzButtonSubmit formAction={forgotPasswordAction} intent="primary" size="lg" className="w-full md:w-1/2" pendingText="Signing in...">
             {t('resetpassword')}
           </PzButtonSubmit>
 

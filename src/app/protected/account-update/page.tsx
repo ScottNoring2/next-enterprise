@@ -187,7 +187,7 @@ console.log("fisrt_name: " + firstname);
         >
           {loading ? 'Loading ...' : 'Update Profile'}
         </button>*/}
-        <PzButton intent="primary" size="lg" 
+        <PzButton intent="primary" size="lg" className="w-full md:w-1/2" 
           onClick={() => updateProfile({username, website, avatar_url,fullname, firstname, lastname, email })}
           disabled={loading}>
            {loading ? 'Loading ...' : 'Update Profile'}

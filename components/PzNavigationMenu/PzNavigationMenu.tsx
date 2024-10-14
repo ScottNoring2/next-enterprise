@@ -17,8 +17,16 @@ export function PzFlowbiteReactNavbar() {
       <Navbar.Collapse className="nav-dropdown-container">
         <Navbar.Link href="/">{t('index')}</Navbar.Link>
         <Navbar.Link href="/about">{t('about')}</Navbar.Link>
-        <Navbar.Link href="/sign-in">{t('signin')}</Navbar.Link>
-        <Navbar.Link href="/sign-up">{t('signup')}</Navbar.Link>
+        <div className="flex md:order-2 nav-dropdown">
+        <Dropdown
+          arrowIcon={true}
+          inline
+          label="Account"
+        >
+         <Dropdown.Item>  <Navbar.Link href="/sign-in">{t('signin')}</Navbar.Link></Dropdown.Item>
+         <Dropdown.Item>  <Navbar.Link href="/sign-up">{t('signup')}</Navbar.Link></Dropdown.Item>
+        </Dropdown>
+      </div>
       </Navbar.Collapse>
     </Navbar>
   );

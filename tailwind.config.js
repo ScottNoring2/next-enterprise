@@ -115,15 +115,15 @@ module.exports = {
       minWidth: {
        // ...defaultTheme.width,
         'sm': '20rem',
-        'md': '47rem',
+        'md': '32rem',
         'lg': '64rem',
         'form': '100%'
       },
       maxWidth: {
-        'sm': '47rem',
-        'md': '64rem',
+        'sm': '31rem',
+        'md': '32rem',
         'lg': '64rem',
-        'form': '50%'
+        'form': '100%'
       },
       spacing: {
         'extra-tight': '4px',

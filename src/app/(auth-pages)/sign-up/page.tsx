@@ -68,7 +68,7 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
         <h1> {t('signup')}</h1>
         <p>
           Already have an account?{" "}
-          <Link href="/sign-in" className="">
+          <Link href="/sign-in" className="capitalize">
             {t('signin')}
           </Link>
         </p>
@@ -97,7 +97,7 @@ export default function Signup({ searchParams }: { searchParams: Message }) {
         </FloatingLabel>
       </div>
          
-        <PzButtonSubmit formAction={signUpAction} intent="primary" size="lg" pendingText="Signing up...">
+        <PzButtonSubmit formAction={signUpAction} intent="primary" size="lg" className="w-full md:w-1/2" pendingText="Signing up...">
         {t('signup')}
         </PzButtonSubmit>
           

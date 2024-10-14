@@ -23,6 +23,7 @@
     "coupling-graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx ./ --exclude '.next|tailwind.config.js|reset.d.ts|prettier.config.js|postcss.config.js|playwright.config.ts|next.config.js|next-env.d.ts|instrumentation.ts|e2e/|README.md|.storybook/|.eslintrc.js' --image graph.svg"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.22.11",
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "@next/bundle-analyzer": "^14.2.3",
     "@radix-ui/react-accordion": "^1.1.2",
@@ -71,6 +72,7 @@
     "react-dom": "^18.3.1",
     "react-floating-label-input": "^4.3.4",
     "react-intl-next": "^0.0.1-security",
+    "suspense": "^0.0.53",
     "tailwind-merge": "^2.3.0",
     "yup": "^1.4.0",
     "zod": "^3.23.8"

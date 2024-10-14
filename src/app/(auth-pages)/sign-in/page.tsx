@@ -46,7 +46,7 @@ export default function Login({ searchParams }: { searchParams: Message }) {
           </Link>
      
          
-        <PzButtonSubmit formAction={signInAction} intent="primary" size="lg" pendingText="Signing in...">
+        <PzButtonSubmit formAction={signInAction} intent="primary" size="lg" className="w-full md:w-1/2" pendingText="Signing in...">
           {t('signin')}
         </PzButtonSubmit>
 
